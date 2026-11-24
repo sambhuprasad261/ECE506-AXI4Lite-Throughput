@@ -1,0 +1,23 @@
+Simulator: Icarus Verilog WebAssembly (@veriflow/iverilog-wasm 0.1.4)
+Compile mode: SystemVerilog 2012, top tb_week2; DUT: baseline
+
+VCD info: dumpfile Results/icarus_baseline.vcd opened for output.
+DESIGN baseline
+PASS reset register readback at all four addresses
+TRACE basic write/readback begins at 160 ns
+[TRACE 175 ns] AW  AWVALID=1 AWREADY=1 AWADDR=0x00
+[TRACE 175 ns] W   WVALID=1 WREADY=1 WDATA=0x12345678 WSTRB=0b1111
+[TRACE 195 ns] B   BVALID=1 BREADY=1 BRESP=0b00
+[TRACE 215 ns] AR  ARVALID=1 ARREADY=1 ARADDR=0x00
+[TRACE 225 ns] R   RVALID=1 RREADY=1 RDATA=0x12345678 RRESP=0b00
+PASS simultaneous AW/W write and readback at 230 ns
+PASS AW-first, W-first and B/R backpressure
+PASS partial and zero strobes, and invalid/misaligned accesses
+PASS all 16 byte-strobe masks
+PASS old value on same-edge read/write
+PASS partial-write and pending-response reset recovery
+METRIC writes=100 cycles=300 writes_per_cycle=0.333333 batch_cycles=1200
+LATENCY transactions=400 min_cycles=2 mean_cycles=2.000 max_cycles=2
+PASS final readback and response accounting after 400 writes
+WEEK2_PASS
+Testbench/tb_week2.sv:505: $finish called at 15430000 (1ps)
